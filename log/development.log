@@ -6822,3 +6822,34 @@ Processing by ArticlesController#new as HTML
 Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2016-08-08 11:41:29 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ArticlesController> at /home/sight/Projects/rails_tutorial_blogger/app/controllers/articles_controller.rb:3)
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (22.2ms)
+Started GET "/" for 127.0.0.1 at 2016-08-08 11:41:30 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 906ms (Views: 900.1ms | ActiveRecord: 0.9ms)
+
+
+Completed 200 OK in 1357ms (Views: 1318.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/articles/16" for 127.0.0.1 at 2016-08-08 11:41:35 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 16]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 16]]
+  Rendered collection of articles/_comment.html.erb [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (51.4ms)
+  Rendered articles/show.html.erb within layouts/application (133.5ms)
+Completed 200 OK in 260ms (Views: 180.5ms | ActiveRecord: 3.9ms)
+
+
