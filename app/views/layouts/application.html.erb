@@ -10,10 +10,12 @@
 
   <body>
     <p class='flash'><%= flash.notice %></p>
-    <div id='sidebar' style='background-color: red'>
-          <p>Articles</p>
-          <p>Tags</p>
-          <p>Users</p>
+    <div id='sidebar'>
+      <ul>
+          <li><%= link_to "Article", articles_path, class: "sidebar_link" %></li><br />
+          <li><%= link_to "Tags", tags_path, class: "sidebar_link"%></li><br />
+          <li><%= link_to "Authors", authors_path, class: "sidebar_link"%></li>
+      </ul>
     </div>
     <div id='container'>
       <div id='content'>
