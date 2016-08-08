@@ -6609,3 +6609,216 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2016-08-08 11:08:25 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ArticlesController> at /home/jfsg/teste/rails_tutorial_blogger/app/controllers/articles_controller.rb:3)
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 507ms (Views: 488.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-08-08 11:08:31 +0100
+Processing by AuthorSessionsController#new as HTML
+  Rendering author_sessions/new.html.erb within layouts/application
+  Rendered author_sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/author_sessions" for 127.0.0.1 at 2016-08-08 11:08:39 +0100
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"33avZ605ezf49uOvMEpsIu5Dzf0ef0MEaFkHTrXz9k3bXZbc1nt8LTkT2zghf96NCNCFHbTGzJZCDS4CI+YRbQ==", "email"=>"admin@example.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."email" = 'admin@example.com' ORDER BY "authors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering author_sessions/new.html.erb within layouts/application
+  Rendered author_sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 43ms (Views: 36.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/author_sessions" for 127.0.0.1 at 2016-08-08 11:08:51 +0100
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vO7WMnnLDOhxGx3WsA3vcCZPa69HD9CDJPpnTH03MuUNhgcOtpuFBleNwako3xInuuKghMvNTY8BvLU/oExYvg==", "email"=>"admin@example.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."email" = 'admin@example.com' ORDER BY "authors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering author_sessions/new.html.erb within layouts/application
+  Rendered author_sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2016-08-08 11:08:53 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-08-08 11:08:55 +0100
+Processing by AuthorSessionsController#new as HTML
+  Rendering author_sessions/new.html.erb within layouts/application
+  Rendered author_sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2016-08-08 11:09:02 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/articles/4" for 127.0.0.1 at 2016-08-08 11:09:02 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 4]]
+  Rendered collection of articles/_comment.html.erb [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (12.5ms)
+  Rendered articles/show.html.erb within layouts/application (41.4ms)
+Completed 200 OK in 88ms (Views: 73.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2016-08-08 11:09:09 +0100
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:AuthorsController> at /home/jfsg/teste/rails_tutorial_blogger/app/controllers/authors_controller.rb:3)
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:AuthorsController> at /home/jfsg/teste/rails_tutorial_blogger/app/controllers/authors_controller.rb:4)
+Processing by AuthorsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (4.1ms)
+  Rendered authors/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 47ms (Views: 40.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/authors" for 127.0.0.1 at 2016-08-08 11:09:19 +0100
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vjiDJVGuKXN61rwAKliMxCP+IeCZTT+U4uEZxVuDITAPUFIZnv6gnVxAYH+yinGTv1PqyxWPopjHp8u2hvhLaw==", "author"=>{"username"=>"A", "email"=>"admin@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "authors" ("username", "email", "crypted_password", "salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "A"], ["email", "admin@example.com"], ["crypted_password", "$2a$10$ksilwD6j4vVunUZmkcVKCeRF158FJ.8aEJKH2xBE7YWCa6MFLbFxm"], ["salt", "zLCEyVfxopsgrxF7NiQp"], ["created_at", 2016-08-08 10:09:19 UTC], ["updated_at", 2016-08-08 10:09:19 UTC]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/authors/3
+Completed 302 Found in 84ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/authors/3" for 127.0.0.1 at 2016-08-08 11:09:19 +0100
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-08 11:09:19 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-08-08 11:09:21 +0100
+Processing by AuthorSessionsController#new as HTML
+  Rendering author_sessions/new.html.erb within layouts/application
+  Rendered author_sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/author_sessions" for 127.0.0.1 at 2016-08-08 11:09:30 +0100
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R616NZBK2z8GEXfC69HFTUK9w4K30cZieJqZkVqdyolDhkOO6wjcJcf0T1X65HfipC6LYh1oSfBSzrDdzIgtqQ==", "email"=>"admin@example.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."email" = 'admin@example.com' ORDER BY "authors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/authors/3
+Completed 302 Found in 122ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/authors/3" for 127.0.0.1 at 2016-08-08 11:09:30 +0100
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering authors/show.html.erb within layouts/application
+  Rendered authors/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 19ms (Views: 15.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2016-08-08 11:09:33 +0100
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-08 11:09:40 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2016-08-08 11:09:42 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  Rendered collection of articles/_comment.html.erb [2 times] (0.7ms)
+  Rendered comments/_form.html.erb (1.2ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered articles/show.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2016-08-08 11:09:50 +0100
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:CommentsController> at /home/jfsg/teste/rails_tutorial_blogger/app/controllers/comments_controller.rb:2)
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"klVT25QUY7Mo6Treskn6yPvoTPf5T5tIRoYnnAShY+FUGI4JA8v0zjjn8NSDnriklPWz/vYN4DyEcNctfHtiCA==", "comment"=>{"author_name"=>"A", "body"=>"teste"}, "commit"=>"Create Comment", "article_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "comments" ("author_name", "body", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["author_name", "A"], ["body", "teste"], ["article_id", 1], ["created_at", 2016-08-08 10:09:50 UTC], ["updated_at", 2016-08-08 10:09:50 UTC]]
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/articles/1
+Completed 302 Found in 20ms (ActiveRecord: 14.0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2016-08-08 11:09:50 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  Rendered collection of articles/_comment.html.erb [3 times] (0.8ms)
+  Rendered comments/_form.html.erb (1.1ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered articles/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2016-08-08 11:09:52 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2016-08-08 11:09:53 +0100
+Processing by ArticlesController#new as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (4.1ms)
+  Rendered articles/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.1ms)
+
+
