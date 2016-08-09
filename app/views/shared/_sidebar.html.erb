@@ -3,3 +3,14 @@
     <li><%= link_to "Tags", tags_path, class: "sidebar_link"%></li><br />
     <li><%= link_to "Authors", authors_path, class: "sidebar_link"%></li>
 </ul>
+
+<hr>
+<h4>Most Popular Articles</h4>
+<ul>
+
+<% @most_popular_articles.each do |a| %>
+    <li>
+        <%= link_to a.title, article_path(a) %>
+    </li>
+<% end %>
+</ul>
