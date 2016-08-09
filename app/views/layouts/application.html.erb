@@ -11,13 +11,7 @@
   <body>
     <p class='flash'><%= flash.notice %></p>
     <div id='sidebar'>
-      <ul>
-          <li><%= link_to "Article", articles_path, class: "sidebar_link" %></li><br />
-          <li><%= link_to "Tags", tags_path, class: "sidebar_link"%></li><br />
-          <li><%= link_to "Authors", authors_path, class: "sidebar_link"%></li>
-      </ul>
-      <ul>
-
+      <%= render "layouts/sidebar" %>
     </div>
     <div id='container'>
       <div id='content'>
