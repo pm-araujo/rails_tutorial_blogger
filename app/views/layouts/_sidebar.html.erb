@@ -3,3 +3,11 @@
     <li><%= link_to "Tags", tags_path, class: "sidebar_link"%></li><br />
     <li><%= link_to "Authors", authors_path, class: "sidebar_link"%></li>
 </ul>
+
+<ul id="months">
+	<% (1..12).each do |month| %>
+		<li>
+			<%= link_to Date::MONTHNAMES[month], month_path(month) %>
+		</li>
+	<% end %>
+</ul>
