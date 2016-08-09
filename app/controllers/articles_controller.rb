@@ -10,7 +10,9 @@ class ArticlesController < ApplicationController
 		@article = Article.find(params[:id])
 		@comment = Comment.new
 		@comment.article_id = @article.id
-		
+
+		Article.increment_counter(:view_count, @article.id)
+
 		@article.save	
 	end
 
