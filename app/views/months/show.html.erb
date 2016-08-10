@@ -1,0 +1,11 @@
+<h1><%= Date::MONTHNAMES[@month.to_i] %></h1>
+
+<ul id="articles">
+<% Article.all.each do |article| %>
+    <li>
+    <% if article.created_at.mon == @month.to_i %>
+        <%= link_to article.title, article_path(article) %>
+    <% end %>
+    </li>
+<% end %>
+</ul>
