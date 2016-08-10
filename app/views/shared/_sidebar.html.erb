@@ -10,4 +10,13 @@
 			<%= link_to Date::MONTHNAMES[month], month_path(month) %>
 		</li>
 	<% end %>
+<hr>
+<h4>Most Popular Articles</h4>
+<ul>
+
+<% @most_popular_articles.each do |a| %>
+    <li>
+        <%= link_to a.title, article_path(a) %>
+    </li>
+<% end %>
 </ul>
